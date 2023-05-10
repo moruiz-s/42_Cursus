@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 17:04:21 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/09 12:52:02 by moruiz-s         ###   ########.fr       */
+/*   Created: 2023/05/10 11:20:18 by moruiz-s          #+#    #+#             */
+/*   Updated: 2023/05/10 14:28:40 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include<stdio.h>
 
-void	*ft_memset(void *str, int c, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t			i;
-	unsigned char	*dest;
+	size_t	src_len;
+	size_t	i;
 
+	src_len = strlen(src);
 	i = 0;
-	dest = str;
-	while (i < n)
+	if (dstsize != 0)
 	{
-		dest[i] = c;
-		i++;
+		while (i < (dstsize - 1) && src[i] != '\0')
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	return (str);
+	return (src_len);
 }
-
-/* int	main(void)
-{
-	char	str[20] = "Esta es una función";
-	char	str2[20] = "Esta es una función";
-	
-	printf("%s \n", memset(str, '$', 4));
-	printf("%s \n", ft_memset(str2, '$', 4));
-	return (0);
-} */

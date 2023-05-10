@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 17:04:21 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/09 12:52:02 by moruiz-s         ###   ########.fr       */
+/*   Created: 2023/05/09 13:25:10 by moruiz-s          #+#    #+#             */
+/*   Updated: 2023/05/10 12:42:15 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include<stdio.h>
 
-void	*ft_memset(void *str, int c, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	size_t			i;
-	unsigned char	*dest;
+	size_t	i;
 
 	i = 0;
-	dest = str;
-	while (i < n)
+	if (dst > src)
 	{
-		dest[i] = c;
-		i++;
+		while (n > 0)
+		{
+			((char *)dst)[n - 1] = ((char *)src)[n - 1];
+			n--;
+		}
 	}
-	return (str);
+	else if (src > dst)
+	{
+		while (i < n)
+		{
+			((char *)dst)[i] = ((char *)src)[i];
+			i++;
+		}
+	}
+	return (dst);
 }
-
-/* int	main(void)
-{
-	char	str[20] = "Esta es una función";
-	char	str2[20] = "Esta es una función";
-	
-	printf("%s \n", memset(str, '$', 4));
-	printf("%s \n", ft_memset(str2, '$', 4));
-	return (0);
-} */

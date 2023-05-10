@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 17:04:21 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/09 12:52:02 by moruiz-s         ###   ########.fr       */
+/*   Created: 2023/05/10 17:17:50 by moruiz-s          #+#    #+#             */
+/*   Updated: 2023/05/10 17:50:03 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include<stdio.h>
 
-void	*ft_memset(void *str, int c, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t			i;
-	unsigned char	*dest;
+	int		i;
+	char	*str;
 
 	i = 0;
-	dest = str;
-	while (i < n)
+	str = (char *)s;
+	while (str[i] != '\0')
 	{
-		dest[i] = c;
+		if (str[i] == (unsigned char)c)
+			return (&str[i]);
 		i++;
 	}
-	return (str);
+	if ((unsigned char)c == '\0')
+		return (&str[i]);
+	return (NULL);
 }
-
-/* int	main(void)
-{
-	char	str[20] = "Esta es una función";
-	char	str2[20] = "Esta es una función";
-	
-	printf("%s \n", memset(str, '$', 4));
-	printf("%s \n", ft_memset(str2, '$', 4));
-	return (0);
-} */

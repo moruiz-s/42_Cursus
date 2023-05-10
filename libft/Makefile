@@ -6,7 +6,7 @@
 #    By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/19 15:45:39 by moruiz-s          #+#    #+#              #
-#    Updated: 2023/05/08 18:04:56 by moruiz-s         ###   ########.fr        #
+#    Updated: 2023/05/10 19:00:14 by moruiz-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,15 @@ SRCS =	ft_isalpha.c\
 		ft_isprint.c\
 		ft_strlen.c\
 		ft_memset.c\
-		ft_bzero.c
+		ft_bzero.c\
+		ft_memcpy.c\
+		ft_memmove.c\
+		ft_strlcpy.c\
+		ft_strlcat.c\
+		ft_toupper.c\
+		ft_tolower.c\
+		ft_strchr.c\
+		ft_strrchr.c
 
 #compilador a utilizar
 Compiler	= gcc
