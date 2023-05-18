@@ -1,43 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 11:56:49 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/15 16:41:45 by moruiz-s         ###   ########.fr       */
+/*   Created: 2023/05/09 13:25:10 by moruiz-s          #+#    #+#             */
+/*   Updated: 2023/05/16 15:46:12 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-#include <unistd.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	size_t	i;
-
+	
 	i = 0;
-	if (!src && !dst)
-		return (NULL);
-	while (i < n)
+	if (dst > src)
 	{
-		((char *)dst)[i] = ((char *)src)[i];
-		i++;
+		while (n > 0)
+		{
+			((char *)dst)[n - 1] = ((char *)src)[n - 1];
+			n--;
+		}
+	}
+	else if (src > dst)
+	{
+		while (i < n)
+		{
+			((char *)dst)[i] = ((char *)src)[i];
+			i++;
+		}
 	}
 	return (dst);
 }
 
-/* int	main(void)
+/* int main(void)
 {
-	char	s1[10] = "hola Mundo";
-	char	s2[5] = "adios";
+	char	s1[8] = "una ruta";
+	char	s2[15] = "caganet catalan";
 	size_t	len;
 
-	len = 4;
-	ft_memcpy(s1, s2, len);
-	write(1, s1, 10);
+	len = 10;
+	ft_memmove(s1, s2, len);
+	write(1, s1, 20);
 	printf("\n");
+	memmove(s1, s2, len);
+	write(1, s1, 20);
 	return (0);
 } */
+ 

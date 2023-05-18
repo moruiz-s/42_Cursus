@@ -6,11 +6,13 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:32:35 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/05 13:12:56 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/05/15 12:05:32 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+/* #include <stdio.h>
+#include <ctype.h> */
 
 int	ft_isalnum(int c)
 {
@@ -20,11 +22,16 @@ int	ft_isalnum(int c)
 		return (0);
 }
 
-/*int	main(void)
+/* int	main(void)
 {
-	int	c;
+	int	i;
+	int	j;
 
-	c = '"';
-	ft_isalnum(c);
+	i = ',';
+	j = 'z';
+	printf(" esta función devuelve %d \n", ft_isalnum(i));
+	printf("función original devuelve %d \n", ft_isalnum(j));
+	printf(" esta función devuelve %d \n", isalnum(i));
+	printf("función original devuelve %d", isalnum(j));
 	return (0);
-}*/
+} */

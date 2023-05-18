@@ -1,43 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 17:58:29 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/17 16:01:52 by moruiz-s         ###   ########.fr       */
+/*   Created: 2023/05/12 12:48:49 by moruiz-s          #+#    #+#             */
+/*   Updated: 2023/05/16 15:19:12 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	int		i;
-	char	*str;
+	size_t	i;
 
-	i = ft_strlen(s);
-	str = (char *)s;
-	while (i >= 0)
+	i = 0;
+	while (i < n && (str1[i] == str2[i]))
 	{
-		if (str[i] == (char)c)
-			return (&str[i]);
-		i--;
+		if ((unsigned char)str1[i] == '\0')
+			return (0);
+		i++;
 	}
-	return (NULL);
+	if (i == n)
+		return (0);
+	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 }
+
 /* int	main(void)
 {
 	const char	*s1;
-	char		*d;
-	int			c;
+	const char	*s2;
+	int			i;
 
-	s1 = "hola mundo";
-	c = 'd';
-	d = ft_strrchr(s1, c);
-	printf("%s\n", d);
-	write(1, d, 2);
+	s1 = "mundos";
+	s2 = "mundi";
+	i = ft_strncmp(s1, s2, 5);
+	printf("resultado de la función %d\n", i);
+	printf("resultado de la función %d", strncmp(s1, s2, 5));
 	return (0);
-}  */
+}
+ */

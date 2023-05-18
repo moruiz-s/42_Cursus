@@ -6,22 +6,26 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 17:50:53 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/08 18:05:37 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/05/15 16:05:57 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 void	ft_bzero(void *str, size_t n)
 {
-	size_t	i;
-	char	*dest;
-
-	i = 0;
-	dest = str;
-	while (i < n)
-	{
-		dest[i] = 0;
-		i++;
-	}
+	ft_memset(str, 0, n);
 }
+
+/* int	main(void)
+{
+	char	s[10] = "hola mundo";
+	size_t	n;
+
+	n = 2;
+	ft_bzero(s, n);
+	write(1, s, 10);
+	return (0);
+}
+ */

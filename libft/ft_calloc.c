@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 16:50:47 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/16 13:29:27 by moruiz-s         ###   ########.fr       */
+/*   Created: 2023/05/17 14:57:17 by moruiz-s          #+#    #+#             */
+/*   Updated: 2023/05/17 16:14:40 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+#include <unistd.h>
 
-int	ft_toupper(int c)
+void	*ft_calloc(size_t count, size_t size)
 {
-	if (c >= 97 && c <= 122)
-		c = c - 32;
-	return (c);
+	size_t	totalsize;
+	void	*mem;
+
+	totalsize = (count * size);
+	mem = malloc(totalsize);
+	if (mem != NULL)
+		ft_memset(mem, 0, size * count);
+	return (mem);
 }
 
 /* int	main(void)
 {
-	int	c;
+	size_t	count;
+	size_t	size;
+	char	*ptrc;
 
-	c = 'z';
-	printf("%c\n", ft_toupper(c));
+	count = 4;
+	size = 2;
+	ptrc = ft_calloc(count, sizeof(char));
+	write(1, ptrc, 8);
+	free(ptrc);
 	return (0);
 } */

@@ -6,11 +6,13 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 17:17:50 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/10 17:50:03 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/05/16 14:49:41 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "unistd.h"
+#include "stdio.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -29,3 +31,17 @@ char	*ft_strchr(const char *s, int c)
 		return (&str[i]);
 	return (NULL);
 }
+
+/* int	main(void)
+{
+	const char	*s1;
+	char		*d;
+	int			c;
+
+	s1 = "hola mundo";
+	c = 'd';
+	d = ft_strchr(s1, c);
+	printf("%s\n", d);
+	write(1, d, 2);
+	return (0);
+} */

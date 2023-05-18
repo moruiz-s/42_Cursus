@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp copy.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 16:50:47 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/16 13:29:27 by moruiz-s         ###   ########.fr       */
+/*   Created: 2023/05/12 12:48:49 by moruiz-s          #+#    #+#             */
+/*   Updated: 2023/05/12 13:27:16 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	ft_toupper(int c)
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	if (c >= 97 && c <= 122)
-		c = c - 32;
-	return (c);
-}
+	size_t	i;
 
-/* int	main(void)
-{
-	int	c;
-
-	c = 'z';
-	printf("%c\n", ft_toupper(c));
+	i = 0;
+	while (i < n)
+	{
+		if (str1[i] != str2[i])
+		{
+			return (str1[i] - str2[i]);
+		}
+		i++;
+	}
 	return (0);
-} */
+}

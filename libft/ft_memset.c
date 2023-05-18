@@ -6,23 +6,21 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 17:04:21 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/09 12:52:02 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/05/15 13:54:15 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include<stdio.h>
+//#include<stdio.h>
 
 void	*ft_memset(void *str, int c, size_t n)
 {
 	size_t			i;
-	unsigned char	*dest;
 
 	i = 0;
-	dest = str;
 	while (i < n)
 	{
-		dest[i] = c;
+		((char *) str)[i] = (unsigned char) c;
 		i++;
 	}
 	return (str);
@@ -30,10 +28,13 @@ void	*ft_memset(void *str, int c, size_t n)
 
 /* int	main(void)
 {
-	char	str[20] = "Esta es una función";
-	char	str2[20] = "Esta es una función";
-	
-	printf("%s \n", memset(str, '$', 4));
-	printf("%s \n", ft_memset(str2, '$', 4));
+	char	s[10] = "hola mundo";
+	int		c;
+	size_t	n;
+
+	c = 'z';
+	n = 3;
+	printf("%s\n", ft_memset(s, c, n));
+	printf("%s\n", memset(s, c, n));
 	return (0);
 } */

@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 16:50:47 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/16 13:29:27 by moruiz-s         ###   ########.fr       */
+/*   Created: 2023/05/17 16:49:47 by moruiz-s          #+#    #+#             */
+/*   Updated: 2023/05/17 17:40:40 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+#include <unistd.h>
 
-int	ft_toupper(int c)
+char	*ft_strdup(const char *s1)
 {
-	if (c >= 97 && c <= 122)
-		c = c - 32;
-	return (c);
+	char	*copy;
+
+	copy = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
+	if (copy == NULL)
+		return (NULL);
+	ft_memcpy(copy, s1, ft_strlen(s1));
+	copy[ft_strlen(s1)] = '\0';
+	return (copy);
 }
 
-/* int	main(void)
+/* int main(void)
 {
-	int	c;
+	char	*s1;
+	char	*copy;
 
-	c = 'z';
-	printf("%c\n", ft_toupper(c));
+	s1 = "hola";
+	copy = ft_strdup(s1);
+	write(1, copy, 4);
 	return (0);
 } */

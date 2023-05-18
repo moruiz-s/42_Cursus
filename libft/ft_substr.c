@@ -1,43 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 11:56:49 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/15 16:41:45 by moruiz-s         ###   ########.fr       */
+/*   Created: 2023/05/18 11:33:59 by moruiz-s          #+#    #+#             */
+/*   Updated: 2023/05/18 16:45:10 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-#include <unistd.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
+	size_t	size;
+	char	*subst;
 
-	i = 0;
-	if (!src && !dst)
+	if (!s)
 		return (NULL);
-	while (i < n)
-	{
-		((char *)dst)[i] = ((char *)src)[i];
-		i++;
-	}
-	return (dst);
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+	size = ft_strlen(s + start);
+	if (size < len)
+		len = size;
+	subst = (char *)malloc(sizeof(char) * (len + 1));
+	if (!subst)
+		return (NULL);
+	ft_strlcpy(subst, s + start, len + 1);
+	return (subst);
 }
 
 /* int	main(void)
 {
-	char	s1[10] = "hola Mundo";
-	char	s2[5] = "adios";
+	int		start;
 	size_t	len;
+	char	*src;
 
-	len = 4;
-	ft_memcpy(s1, s2, len);
-	write(1, s1, 10);
-	printf("\n");
+	src = "holamundo";
+	start = 3;
+	len = 10;
+	printf("%s", ft_substr(src, start, len));
 	return (0);
 } */

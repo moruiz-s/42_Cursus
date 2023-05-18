@@ -1,30 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 16:50:47 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/16 13:29:27 by moruiz-s         ###   ########.fr       */
+/*   Created: 2023/05/12 13:40:19 by moruiz-s          #+#    #+#             */
+/*   Updated: 2023/05/17 15:51:08 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int	ft_toupper(int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (c >= 97 && c <= 122)
-		c = c - 32;
-	return (c);
+	size_t			i;
+	unsigned char	*str;
+	unsigned char	ch;
+
+	ch = (unsigned char) c;
+	str = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		if (str[i] == ch)
+			return (&str[i]);
+		i++;
+	}
+	return (NULL);
 }
 
 /* int	main(void)
 {
-	int	c;
+	char	s[10] = "hola mundo";
+	int		c;
+	char	*ptr;
 
-	c = 'z';
-	printf("%c\n", ft_toupper(c));
+	c = 'm';
+	ptr = memchr(s, c, 10);
+	write(1, ptr, 7);
 	return (0);
 } */
