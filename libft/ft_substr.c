@@ -6,7 +6,7 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:33:59 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/18 16:45:10 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/05/19 15:14:13 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size = ft_strlen(s + start);
 	if (size < len)
 		len = size;
-	subst = (char *)malloc(sizeof(char) * (len + 1));
+	subst = malloc(sizeof(char) * (len + 1));
 	if (!subst)
 		return (NULL);
 	ft_strlcpy(subst, s + start, len + 1);

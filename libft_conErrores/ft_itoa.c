@@ -1,37 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 16:49:47 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/19 16:14:52 by moruiz-s         ###   ########.fr       */
+/*   Created: 2023/05/19 15:28:06 by moruiz-s          #+#    #+#             */
+/*   Updated: 2023/05/19 16:52:26 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-char	*ft_strdup(const char *s1)
+int	ft_lenn(int n)
 {
-	char	*copy;
+	int	i;
+	int	temp;
 
-	copy = malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (copy == NULL)
-		return (NULL);
-	ft_memcpy(copy, s1, ft_strlen(s1));
-	copy[ft_strlen(s1)] = '\0';
-	return (copy);
+	temp = n;
+	i = 1;
+	if (temp < 0)
+	{
+		temp = temp * -1;
+		i++;
+	}
+	while (temp >= 10)
+	{
+		temp = temp / 10;
+		i++;
+	}
+	return (i);
 }
 
-/* int main(void)
+char	*ft_itoa(int n)
 {
-	char	*s1;
-	char	*copy;
+	char	*str_n;
+	int		i;
+	int		len;
 
-	s1 = "hola";
-	copy = ft_strdup(s1);
-	write(1, copy, 4);
-	return (0);
-} */
+	i == 0;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (n == 0)
+		return (ft_strdup("0"));
+	len = ft_lenn(n);
+	str_n = malloc(sizeof(char) * (len + 1));
+	
+	return (str_n);
+}

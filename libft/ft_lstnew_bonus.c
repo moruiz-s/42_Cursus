@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 16:49:47 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/19 16:14:52 by moruiz-s         ###   ########.fr       */
+/*   Created: 2023/05/29 17:31:33 by moruiz-s          #+#    #+#             */
+/*   Updated: 2023/05/29 18:01:58 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-char	*ft_strdup(const char *s1)
+typedef struct s_list
 {
-	char	*copy;
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
-	copy = malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (copy == NULL)
+t_list	*ft_lstnew(void *content);
+{
+	t_list	*list;
+
+	list = (t_list *)malloc(sizeof(*t_list));
+	if (!list)
 		return (NULL);
-	ft_memcpy(copy, s1, ft_strlen(s1));
-	copy[ft_strlen(s1)] = '\0';
-	return (copy);
+	list->content = content;
+	list->next = NULL;
+	return (list);
 }
 
-/* int main(void)
+int	main(void)
 {
-	char	*s1;
-	char	*copy;
+	char 	str[] = "hola que tal";
+	t_list	*elem;
 
-	s1 = "hola";
-	copy = ft_strdup(s1);
-	write(1, copy, 4);
-	return (0);
-} */
+	elem = ft_lstnew((void *)str);
+	printf("%s\n", list->content);
+	return(0);
+}

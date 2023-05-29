@@ -1,37 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 16:49:47 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/19 16:14:52 by moruiz-s         ###   ########.fr       */
+/*   Created: 2023/05/23 16:13:09 by moruiz-s          #+#    #+#             */
+/*   Updated: 2023/05/23 17:37:17 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-char	*ft_strdup(const char *s1)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*copy;
+	int	nb;
 
-	copy = malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (copy == NULL)
-		return (NULL);
-	ft_memcpy(copy, s1, ft_strlen(s1));
-	copy[ft_strlen(s1)] = '\0';
-	return (copy);
+	nb = n;
+	if (nb == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
+	if (nb < 0)
+	{
+		nb = nb * -1;
+		write(fd, "-", 1);
+	}
+	if (nb > 9)
+	{
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putnbr_fd(nb % 10, fd);
+	}
+	else
+	{
+		nb = nb + '0';
+		write(fd, &nb, 1);
+	}
 }
 
-/* int main(void)
+/* int	main(void)
 {
-	char	*s1;
-	char	*copy;
+	int	n;
+	int	fd;
 
-	s1 = "hola";
-	copy = ft_strdup(s1);
-	write(1, copy, 4);
+	n = -21474648;
+	fd = 1;
+	ft_putnbr_fd(n, fd);
 	return (0);
 } */

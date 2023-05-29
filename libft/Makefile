@@ -6,7 +6,7 @@
 #    By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/19 15:45:39 by moruiz-s          #+#    #+#              #
-#    Updated: 2023/05/18 16:13:09 by moruiz-s         ###   ########.fr        #
+#    Updated: 2023/05/29 16:37:52 by moruiz-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,15 @@ SRCS =	ft_isalpha.c\
 		ft_strdup.c\
 		ft_substr.c\
 		ft_strjoin.c\
-		ft_strtrim.c
+		ft_strtrim.c\
+		ft_itoa.c\
+		ft_strmapi.c\
+		ft_striteri.c\
+		ft_putchar_fd.c\
+		ft_putstr_fd.c\
+		ft_putendl_fd.c\
+		ft_putnbr_fd.c\
+		ft_split.c
 
 #compilador a utilizar
 Compiler	= gcc

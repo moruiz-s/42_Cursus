@@ -6,7 +6,7 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 15:08:40 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/18 17:08:32 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/05/19 15:23:08 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	i = 0;
 	end = ft_strlen(s1) - 1;
-	while (set[i] != '\0')
+	while (set[i] != '\0' && end >= 0)
 	{
 		while (s1[start] == set[i] || s1[end] == set[i])
 		{
@@ -75,12 +75,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*set;
 	char	*s_cut;
 
-	s1 = "";
-	set = "olh";
+	s1 = "12434jose1111";
+	set = "123";
 	s_cut = ft_strtrim(s1, set);
 	//printf("%s", ft_strtrim(s1, set));
 	write(1, s_cut, 10);
 	free(s_cut);
 	return (0);
-}
- */
+} */
