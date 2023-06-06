@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 17:31:33 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/06/05 12:13:38 by moruiz-s         ###   ########.fr       */
+/*   Created: 2023/05/30 17:35:16 by moruiz-s          #+#    #+#             */
+/*   Updated: 2023/06/05 12:24:58 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*list;
+	t_list	*endlst;
 
-	list = (t_list *)malloc(sizeof(t_list));
-	if (!list)
+	if (!lst)
 		return (NULL);
-	list->content = content;
-	list->next = NULL;
-	return (list);
+	endlst = lst;
+	while (endlst->next != NULL)
+		endlst = endlst->next;
+	return (endlst);
 }
 
 /* int main(void)
 {
-	t_list	*lst;
+    t_list  *lst;
+   	t_list	*nodoend;
 
-	lst = NULL;
-	lst = ft_lstnew("hola");
+    lst = ft_lstnew("hola");
 	lst->next = ft_lstnew("mundo");
-	printf("el nodo 1 contiene %s\n", lst->content);
-	printf("el nodo 2 contiene %s\n", lst->next->content);
-	return(free(lst->next), free(lst), 0);
-	
-	
-} */
+	lst->next->next = ft_lstnew("adios");
+   	nodoend = ft_lstlast(lst);
+    printf("El ultimo nodo de la lista contiene: %s\n", nodoend->content);
+    return (free(lst->next->next), free(lst->next), free(lst), 0);
+}
+ */

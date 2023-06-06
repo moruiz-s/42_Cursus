@@ -1,39 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 17:31:33 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/06/05 12:13:38 by moruiz-s         ###   ########.fr       */
+/*   Created: 2023/06/01 12:30:51 by moruiz-s          #+#    #+#             */
+/*   Updated: 2023/06/05 12:48:59 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*list;
+	t_list	*count;
 
-	list = (t_list *)malloc(sizeof(t_list));
-	if (!list)
-		return (NULL);
-	list->content = content;
-	list->next = NULL;
-	return (list);
+	count = *lst;
+	if (!new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	ft_lstlast(count)->next = new;
 }
 
 /* int main(void)
 {
-	t_list	*lst;
-
-	lst = NULL;
+    t_list  *lst;
+    t_list  *nodonew;
+	
+    lst = NULL;
 	lst = ft_lstnew("hola");
 	lst->next = ft_lstnew("mundo");
-	printf("el nodo 1 contiene %s\n", lst->content);
-	printf("el nodo 2 contiene %s\n", lst->next->content);
-	return(free(lst->next), free(lst), 0);
-	
-	
+	nodonew = NULL;
+	nodonew = ft_lstnew("adios");
+    ft_lstadd_back(&lst, nodonew);
+    printf("El ultimo nodo de la lista unida contiene: %s\n", lst->next->next->content);
+    return (free(lst->next->next), free(lst->next), free(lst), 0);
 } */

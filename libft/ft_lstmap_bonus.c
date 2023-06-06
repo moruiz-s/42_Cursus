@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 17:31:33 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/06/05 12:13:38 by moruiz-s         ###   ########.fr       */
+/*   Created: 2023/06/01 15:36:38 by moruiz-s          #+#    #+#             */
+/*   Updated: 2023/06/01 16:10:37 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*list;
+	t_list	*result;
+	t_list	*new;
 
-	list = (t_list *)malloc(sizeof(t_list));
-	if (!list)
+	if (!lst && !*del && !*f)
 		return (NULL);
-	list->content = content;
-	list->next = NULL;
-	return (list);
+	result = NULL;
+	while (lst)
+	{
+		new = ft_lstnew ((*f)(lst->content));
+		ft_lstadd_back(&result, new);
+		lst = lst->next;
+	}
+	return (result);
 }
-
-/* int main(void)
-{
-	t_list	*lst;
-
-	lst = NULL;
-	lst = ft_lstnew("hola");
-	lst->next = ft_lstnew("mundo");
-	printf("el nodo 1 contiene %s\n", lst->content);
-	printf("el nodo 2 contiene %s\n", lst->next->content);
-	return(free(lst->next), free(lst), 0);
-	
-	
-} */

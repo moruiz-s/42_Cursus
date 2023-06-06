@@ -1,39 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 17:31:33 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/06/05 12:13:38 by moruiz-s         ###   ########.fr       */
+/*   Created: 2023/05/30 15:21:07 by moruiz-s          #+#    #+#             */
+/*   Updated: 2023/06/05 12:26:06 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list	*list;
-
-	list = (t_list *)malloc(sizeof(t_list));
-	if (!list)
-		return (NULL);
-	list->content = content;
-	list->next = NULL;
-	return (list);
+	if (!new)
+		return ;
+	if (!lst)
+	{
+		*lst = new;
+		return ;
+	}
+	new->next = *lst;
+	*lst = new;
 }
 
-/* int main(void)
+int main(void)
 {
 	t_list	*lst;
-
+	t_list	*ndnew;
+	
 	lst = NULL;
 	lst = ft_lstnew("hola");
 	lst->next = ft_lstnew("mundo");
-	printf("el nodo 1 contiene %s\n", lst->content);
-	printf("el nodo 2 contiene %s\n", lst->next->content);
-	return(free(lst->next), free(lst), 0);
-	
-	
-} */
+	printf("%s\n", lst->content);
+	printf("%s\n", lst->next->content);
+	ndnew = ft_lstnew("creative");
+	ft_lstadd_front(&lst, ndnew);
+	printf("%s\n", lst->content);
+	printf("%s\n", lst->next->content);
+	printf("%s\n", lst->next->next->content);
+	return(free(lst->next->next), free(lst->next), free(lst), 0);
+}

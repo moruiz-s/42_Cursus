@@ -1,39 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 17:31:33 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/06/05 12:13:38 by moruiz-s         ###   ########.fr       */
+/*   Created: 2023/06/01 15:27:14 by moruiz-s          #+#    #+#             */
+/*   Updated: 2023/06/05 11:02:07 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void print_char_index(void *n) 
 {
-	t_list	*list;
-
-	list = (t_list *)malloc(sizeof(t_list));
-	if (!list)
-		return (NULL);
-	list->content = content;
-	list->next = NULL;
-	return (list);
+    printf("la función imprime %s \n", n);
+	
 }
 
-/* int main(void)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
+{
+	if (!lst || !f)
+		return ;
+	while (lst)
+	{
+		(*f)(lst->content);
+		lst = lst->next;
+	}
+}
+
+int main()
 {
 	t_list	*lst;
-
+	
 	lst = NULL;
 	lst = ft_lstnew("hola");
+	printf("%lu\n", sizeof(lst->content));
 	lst->next = ft_lstnew("mundo");
-	printf("el nodo 1 contiene %s\n", lst->content);
-	printf("el nodo 2 contiene %s\n", lst->next->content);
-	return(free(lst->next), free(lst), 0);
-	
-	
-} */
+	lst->next->next = ft_lstnew("creative");
+	//t_list *tmp = lst;
+	ft_lstiter(lst, print_char_index);
+	/* while (tmp) 
+	{
+		printf("%s\n", tmp->content);
+		tmp = tmp->next;
+	} */
+	return (free(lst->next->next), free(lst->next), free(lst), 0);
+}
