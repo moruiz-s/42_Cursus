@@ -6,17 +6,17 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:06:18 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/06/05 16:16:45 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/06 14:09:36 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void del(void *n) 
+/* static void del(void *n) 
 {
     printf("free %s", n);
 	free(n);
-} 
+}  */
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
@@ -36,8 +36,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	lst = NULL;
 }
 
-
-int	main()
+/* int	main()
 {
 	t_list	*lst;
 	char	*content = strdup("Pacorro");
@@ -50,4 +49,4 @@ int	main()
 		ft_lstclear(&lst, del);
 	}
 	return (0);
-}
+} */

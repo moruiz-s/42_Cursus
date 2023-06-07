@@ -6,13 +6,12 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 12:43:00 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/15 12:35:09 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/06 10:46:53 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/* #include <stdio.h>
-#include <ctype.h> */
+//#include <ctype.h>
 
 int	ft_isascii(int c)
 {

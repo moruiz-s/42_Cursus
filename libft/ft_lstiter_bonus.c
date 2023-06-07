@@ -6,17 +6,16 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:27:14 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/06/05 11:02:07 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/06 14:11:16 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void print_char_index(void *n) 
+/* static void	print_char_index(void *n)
 {
-    printf("la función imprime %s \n", n);
-	
-}
+	printf("la función imprime %s \n", n);
+} */
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
@@ -29,7 +28,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	}
 }
 
-int main()
+/* int main()
 {
 	t_list	*lst;
 	
@@ -38,12 +37,6 @@ int main()
 	printf("%lu\n", sizeof(lst->content));
 	lst->next = ft_lstnew("mundo");
 	lst->next->next = ft_lstnew("creative");
-	//t_list *tmp = lst;
 	ft_lstiter(lst, print_char_index);
-	/* while (tmp) 
-	{
-		printf("%s\n", tmp->content);
-		tmp = tmp->next;
-	} */
 	return (free(lst->next->next), free(lst->next), free(lst), 0);
-}
+} */

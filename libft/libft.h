@@ -6,7 +6,7 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 11:47:47 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/06/01 16:01:46 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/07 11:33:45 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,8 @@
 #  define BUFFER_SIZE 32
 # endif
 
-# include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <strings.h>
-# include <stdbool.h>
-# include <stdio.h>
 
 typedef struct s_list
 {

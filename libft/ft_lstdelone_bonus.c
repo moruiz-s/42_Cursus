@@ -6,26 +6,11 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 13:15:53 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/06/05 16:13:06 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/06 14:08:53 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/* #include "ft_lstnew_bonus.c" */
-
-/* typedef struct s_type{
-	const char *noliberable;
-	char *liberable;
-}t_type;
-
-
-void del(void *n) 
-{
-    printf("free %s", n);
-	t_type *value = (t_type *)n;
-	free(value->liberable);
-	//free(n);
-} */
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
@@ -34,7 +19,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	(*del)(lst->content);
 	free(lst);
 }
-
 
 /* int main(void)
 {

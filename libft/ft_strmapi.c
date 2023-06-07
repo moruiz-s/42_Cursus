@@ -6,7 +6,7 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 17:30:04 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/23 12:52:34 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/06 14:07:05 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (str_f);
 }
 
-/* char	mi_funcion(unsigned int i, char str)
+/* static char	mi_funcion(unsigned int i, char str)
 {
 	i = 32;
 	return (str - i);
-}
- */
+} */
+
 /* int	main(void)
 {
 	char	*str;

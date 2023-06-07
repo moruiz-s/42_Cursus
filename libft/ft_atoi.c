@@ -6,13 +6,11 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:58:24 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/17 14:50:34 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/06 12:48:11 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <ctype.h>
 
 int	ft_atoi(const char *str)
 {

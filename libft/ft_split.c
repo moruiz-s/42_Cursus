@@ -6,7 +6,7 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 15:08:45 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/29 17:04:50 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/07 11:13:17 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static size_t	ft_wordcount(char *s, char c)
 	return (count);
 }
 
-static size_t	ft_divword(char const *s, int i, char c)
+static size_t	ft_wordsize(char const *s, int i, char c)
 {
 	int		len;
 
@@ -80,7 +80,7 @@ char	**ft_split(char const *s, char c)
 	{
 		while (s[i] == c)
 			i++;
-		slen = ft_divword(s, i, c);
+		slen = ft_wordsize(s, i, c);
 		strs[row] = ft_substr(s, i, slen);
 		if (!strs[row])
 			return (ft_freesplit(strs), NULL);
@@ -100,7 +100,6 @@ char	**ft_split(char const *s, char c)
 
 	c = ' ';
 	len = ft_wordcount(strs, c);
-	//len = ft_countword(strs, c);
 	printf("el numero de palabras es: %d\n", len);
 	sp = ft_split(strs, c);
 	printf("sp[0]%s\n", sp[0]);

@@ -6,7 +6,7 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 15:21:07 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/06/05 12:26:06 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/06 14:03:59 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	*lst = new;
 }
 
-int main(void)
+/* int main(void)
 {
 	t_list	*lst;
 	t_list	*ndnew;
-	
+
 	lst = NULL;
 	lst = ft_lstnew("hola");
 	lst->next = ft_lstnew("mundo");
@@ -41,4 +41,4 @@ int main(void)
 	printf("%s\n", lst->next->content);
 	printf("%s\n", lst->next->next->content);
 	return(free(lst->next->next), free(lst->next), free(lst), 0);
-}
+} */

@@ -6,13 +6,11 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 11:56:49 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/15 16:41:45 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/06 10:59:25 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <unistd.h>
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

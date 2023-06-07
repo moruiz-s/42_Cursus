@@ -6,12 +6,11 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 17:50:53 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/15 16:05:57 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/06 12:02:39 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 void	ft_bzero(void *str, size_t n)
 {

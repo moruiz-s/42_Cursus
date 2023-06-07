@@ -6,12 +6,11 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 13:40:19 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/17 15:51:08 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/06 12:32:00 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

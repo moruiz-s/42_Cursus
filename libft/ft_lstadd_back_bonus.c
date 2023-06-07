@@ -6,7 +6,7 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 12:30:51 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/06/05 12:48:59 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/06 10:51:24 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	ft_lstlast(count)->next = new;
 }
 
-/* int main(void)
+/*int main(void)
 {
     t_list  *lst;
     t_list  *nodonew;
@@ -38,6 +38,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	nodonew = NULL;
 	nodonew = ft_lstnew("adios");
     ft_lstadd_back(&lst, nodonew);
-    printf("El ultimo nodo de la lista unida contiene: %s\n", lst->next->next->content);
+    printf("El ultimo nodo de la lista unida: %s\n", lst->next->next->content);
     return (free(lst->next->next), free(lst->next), free(lst), 0);
 } */

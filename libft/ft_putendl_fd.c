@@ -6,7 +6,7 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 13:45:37 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/23 13:48:41 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/06 14:01:01 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,12 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 	write(fd, "\n", 1);
 }
+
+/* int main(void)ca
+{
+   char    *c;
+   int     fd;
+   c = "MAI";
+   fd = 1;
+   ft_putendl_fd(c, fd);
+} */

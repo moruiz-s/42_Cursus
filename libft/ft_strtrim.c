@@ -6,40 +6,11 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 15:08:40 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/19 15:23:08 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/06 13:17:24 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/* size_t	ft_strlen(const char *s)
-{
-	size_t	count;
-
-	count = 0;
-	while (s[count])
-		count++;
-	return (count);
-}
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	size_t	size;
-	char	*subst;
-
-	if (!s)
-		return (NULL);
-	if (start >= strlen(s))
-		return (strdup(""));
-	size = strlen(s + start);
-	if (size < len)
-		len = size;
-	subst = (char *)malloc(sizeof(char) * (len + 1));
-	if (!subst)
-		return (NULL);
-	strlcpy(subst, s + start, len + 1);
-	return (subst);
-} */
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

@@ -6,12 +6,11 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 16:49:47 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/05/19 16:14:52 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/06 13:04:10 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 char	*ft_strdup(const char *s1)
 {
