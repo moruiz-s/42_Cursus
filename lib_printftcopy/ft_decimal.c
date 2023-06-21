@@ -6,15 +6,15 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 16:06:41 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/06/16 16:27:25 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/21 15:57:47 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_decimal(int n)
+int	ft_decimal(int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (n < 0)

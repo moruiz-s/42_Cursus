@@ -6,7 +6,7 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 13:50:19 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/06/16 17:01:25 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/21 17:39:53 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,23 @@ int	ft_selectargs(va_list args, const char c)
 		len_ar += ft_printstr(va_arg(args, char *));
 	else if (c == 'i' || c == 'd')
 		len_ar += ft_decimal(va_arg(args, int));
-	else if (c == 'u');
+	else if (c == 'u')
 		len_ar += ft_decimal_us(va_arg(args, unsigned int));
+	else if (c == 'x' || c == 'X')
+		len_ar += ft_hexadecimal(va_arg(args, unsigned int), c);
+	else if (c == 'p')
+		len_ar += ft_printpointer(va_arg(args, unsigned int));
 	else if (c == '%')
 		len_ar += ft_printchr('%');
 	return (len_ar);
 }
 
-int		ft_printf(char const *str, ...)
+int	ft_printf(char const *str, ...)
 {
 	int		i;
 	int		len;
-	va_list args;
-	
+	va_list	args;
+
 	va_start(args, str);
 	i = 0;
 	len = 0;
@@ -44,7 +48,7 @@ int		ft_printf(char const *str, ...)
 	{
 		if (str[i] == '%')
 		{
-			len +=ft_selectargs(args, str[i + 1]);
+			len += ft_selectargs(args, str[i + 1]);
 			i++;
 		}
 		else
@@ -55,12 +59,12 @@ int		ft_printf(char const *str, ...)
 	return (len);
 }
 
-/* int main(void)
+/* int	main(void)
 {
 	char	*s;
 	int		count;
 	int		c;
-		
+
 	s = "HOLA MUNDO";
 	c = 'O';
 	count = strlen("la función 0 es HOLA MUNDO\n");
