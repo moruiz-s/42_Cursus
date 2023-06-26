@@ -6,7 +6,7 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 13:50:19 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/06/21 17:39:53 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/26 16:39:35 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_selectargs(va_list args, const char c)
 	else if (c == 'x' || c == 'X')
 		len_ar += ft_hexadecimal(va_arg(args, unsigned int), c);
 	else if (c == 'p')
-		len_ar += ft_printpointer(va_arg(args, unsigned int));
+		len_ar += ft_printpointer((unsigned long)va_arg(args, void *));
 	else if (c == '%')
 		len_ar += ft_printchr('%');
 	return (len_ar);
@@ -62,14 +62,15 @@ int	ft_printf(char const *str, ...)
 /* int	main(void)
 {
 	char	*s;
-	int		count;
+	int		count1;
 	int		c;
+	int		count2;
 
 	s = "HOLA MUNDO";
 	c = 'O';
-	count = strlen("la función 0 es HOLA MUNDO\n");
-	ft_printf("la función ft_printf retorna %i\n", count);
-	count = ft_printf("la función %c es %s\n", c, s);
-	printf("la función printf retorna %d\n", count);
+	count1 = printf("la función printf devuelve %d \n", count1);
+	printf("la función ft_printf retorna %d\n", count1);
+	count2 = ft_printf("la función ft_print devuelve %d \n", count2);
+	printf("la función printf retorna %d\n", count2);
 	return (0);
 } */
