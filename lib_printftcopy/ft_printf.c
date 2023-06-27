@@ -6,7 +6,7 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 13:50:19 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/06/26 16:39:35 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/27 15:43:24 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,11 @@ int	ft_printf(char const *str, ...)
 	va_start(args, str);
 	i = 0;
 	len = 0;
+	if ((ft_strlen(str) == 1) && str[i] == '%')
+		return (len);
 	while (str[i] != '\0')
 	{
-		if (str[i] == '%')
+		if (str[i] == '%' && str[i + 1])
 		{
 			len += ft_selectargs(args, str[i + 1]);
 			i++;
@@ -66,11 +68,11 @@ int	ft_printf(char const *str, ...)
 	int		c;
 	int		count2;
 
-	s = "HOLA MUNDO";
+	s = "%";
 	c = 'O';
-	count1 = printf("la función printf devuelve %d \n", count1);
-	printf("la función ft_printf retorna %d\n", count1);
-	count2 = ft_printf("la función ft_print devuelve %d \n", count2);
-	printf("la función printf retorna %d\n", count2);
+	count1 = printf("%s \n", s);
+	printf("la función printf retorna %d\n", count1);
+	count1 = ft_printf("%s \n", s);
+	ft_printf("la función ft_printf retorna %d\n", count1);
 	return (0);
 } */

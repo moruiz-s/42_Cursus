@@ -6,7 +6,7 @@
 #    By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/19 15:45:39 by moruiz-s          #+#    #+#              #
-#    Updated: 2023/06/21 17:36:27 by moruiz-s         ###   ########.fr        #
+#    Updated: 2023/06/27 15:30:44 by moruiz-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,12 +20,13 @@ SRCS =	ft_printf.c\
 		ft_decimal.c\
 		ft_decimal_us.c\
 		ft_hexadecimal.c\
-		ft_printpointer.c
+		ft_printpointer.c\
+		ft_strlen.c
 
 #Variable para archivos objeto .c y .o
 OBJS	= $(SRCS:%.c=%.o)
 
-#compilador a utilizar
+#compilador a ut$$ilizar
 CC = gcc
 
 #variables para flags

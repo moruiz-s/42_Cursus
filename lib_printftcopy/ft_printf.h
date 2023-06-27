@@ -6,7 +6,7 @@
 /*   By: moruiz-s <moruiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 11:47:47 by moruiz-s          #+#    #+#             */
-/*   Updated: 2023/06/21 17:36:00 by moruiz-s         ###   ########.fr       */
+/*   Updated: 2023/06/27 15:31:53 by moruiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int		ft_decimal(int n);
 int		ft_decimal_us(unsigned int n);
 int		ft_hexadecimal(unsigned long long n, char c);
 int		ft_printpointer(unsigned long long n);
+size_t	ft_strlen(const char *s);
 
 #endif
